@@ -27,6 +27,25 @@
   flex-direction: column;
   gap: cssUtils.$space-3xs;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: cssUtils.$border-default transparent;
+
+  &::-webkit-scrollbar {
+    width: cssUtils.$space-xs;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: cssUtils.$border-default;
+    border-radius: calc(cssUtils.$radius-2xs + cssUtils.$space-3xs);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: cssUtils.$text-neutral-secondary;
+  }
 }
 
 .openui-copilot-shell-thread-list-empty {
