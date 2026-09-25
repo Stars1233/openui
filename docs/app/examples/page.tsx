@@ -2,7 +2,7 @@ import { DocsPageView, getDocsPageMetadata } from "@/components/docs-page";
 import { source } from "@/lib/source";
 import { notFound } from "next/navigation";
 
-const page = source.getPage(["demos"]);
+const page = source.getPage(["examples"]);
 
 export default function Page() {
   if (!page) notFound();
