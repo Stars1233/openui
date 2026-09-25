@@ -104,6 +104,7 @@ Try it yourself in the [Playground](https://www.openui.com/playground): generate
 | [`@openuidev/svelte-lang`](./packages/svelte-lang)                                                         | Svelte integrations                              | Svelte 5 bindings for defining model-renderable components and rendering streamed OpenUI Lang                |
 | [`@openuidev/angular-lang`](./packages/angular-lang)                                                       | Angular integrations                             | Angular bindings for defining component libraries and rendering streamed OpenUI Lang                         |
 | [`@openuidev/browser-bundle`](./packages/browser-bundle)                                                   | CDN, iframe, and no-build embeds                 | Prebuilt browser bundle that ships the renderer, UI library, React, and styles as script + stylesheet assets |
+| [`@openuidev/a2ui`](./packages/a2ui)                                                                       | A2UI with OpenUI Lang component payloads         | Framework-agnostic A2UI v1.0 protocol client with an optional React renderer                                 |
 | [`@openuidev/server`](./packages/server)                                                                   | Server side utilities                            | Server utilities for OpenUI and OpenUI Gateway                                                               |
 | [`@openuidev/observability-cloud`](./packages/observability-cloud)                                         | Hosted observability in the Thesys console       | Cloud sink that batches OpenUI events and ships them to OpenUI Gateway                                       |
 | [`@openuidev/cli`](./packages/openui-cli)                                                                  | Project scaffolding and prompt generation        | CLI for creating new apps and generating system prompts or JSON schema from a library definition             |
@@ -125,6 +126,9 @@ npm install @openuidev/langchain @langchain/langgraph
 npm install @openuidev/vue-lang
 npm install @openuidev/svelte-lang
 npm install @openuidev/angular-lang
+
+# A2UI protocol with OpenUI Lang component payloads
+npm install @openuidev/a2ui zod
 ```
 
 ## Why OpenUI Lang
@@ -173,6 +177,7 @@ openui/
 │   ├── svelte-lang/      # Svelte runtime bindings for OpenUI Lang
 │   ├── angular-lang/     # Angular runtime bindings for OpenUI Lang
 │   ├── browser-bundle/   # Script-tag bundle for CDN / iframe / no-build embeds
+│   ├── a2ui/             # A2UI protocol with OpenUI Lang component payloads
 │   ├── server/           # Server utilities for OpenUI & OpenUI Gateway
 │   ├── observability/    # Framework-free observability event bus
 │   ├── observability-cloud/ # Cloud sink shipping OpenUI events to Thesys

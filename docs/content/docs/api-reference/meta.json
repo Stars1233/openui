@@ -12,6 +12,7 @@
     "react-email",
     "devtools",
     "cli",
-    "angular-lang"
+    "angular-lang",
+    "a2ui"
   ]
 }
