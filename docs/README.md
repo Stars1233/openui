@@ -103,6 +103,7 @@ docs/
 │   │   ├── openui-lang/                    # OpenUI Lang docs
 │   │   ├── agent/                          # Agent Interface docs
 │   │   ├── build-agents/                   # Existing chat UI and agent framework guides
+│   │   ├── cookbooks/                      # Practical tutorials and runnable examples
 │   │   ├── api-reference/                  # API reference
 │   │   └── mcp/                            # MCP docs
 │   └── blog/                               # Blog MDX content
@@ -158,12 +159,12 @@ Active component-preview specific modules are located under `app/components/` an
 ### Navigation
 
 `components/docs-navbar.tsx` provides the shared docs header, search, theme control, mobile
-sidebar trigger, and two top-level tabs: **Docs** (`/docs`) and **API Reference**
-(`/docs/api-reference`). The API Reference tab is active for any page under
-`/docs/api-reference` and its sidebar lists that folder's pages directly.
+sidebar trigger, and three top-level tabs: **Docs** (`/docs`), **Cookbooks** (`/docs/cookbooks`),
+and **API Reference** (`/docs/api-reference`). Cookbooks and API Reference stay active on their
+respective child pages, and each sidebar lists its folder's pages directly.
 
 Within the Docs tab there are two sidebar modes. The global sidebar introduces the documentation
-through Overview, Build, and Production groups. Links with chevrons enter a nested section sidebar
+through Start, Build, and Production groups. Links with chevrons enter a nested section sidebar
 for OpenUI Lang, Build Agents (including Agent Interface), Reliability Monitoring, or Gateway.
 Production overview and Autofix are direct pages in the global sidebar. Nested page lists continue
 to come from each section's `meta.json`; “All docs” restores the global sidebar without changing

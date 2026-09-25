@@ -61,6 +61,12 @@
       "envKey": "THESYS_API_KEY"
     },
     {
+      "title": "Conversational analytics",
+      "description": "Explore real Formula 1 lap times with OpenUI Gateway, streamed charts, and visible database tool calls.",
+      "path": "cookbooks/conversational-analytics",
+      "envKey": "THESYS_API_KEY"
+    },
+    {
       "title": "Material UI",
       "description": "A broad Material UI component library for generated interfaces.",
       "path": "design-systems/material-ui",

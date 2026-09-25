@@ -5,6 +5,7 @@ import {
   GLOBAL_DOCS_TREE,
   NESTED_DOCS_SECTIONS,
   getApiReferenceTree,
+  getCookbooksTree,
   getGlobalActiveItemUrl,
   getNestedDocsTree,
   getNestedRootForEntryUrl,
@@ -101,10 +102,12 @@ export function DocsRouteLayout({ tree, children }: DocsRouteLayoutProps) {
 
   const nestedRoot = sidebarMode.kind === "nested" ? sidebarMode.root : undefined;
   const isApiReference = sidebarMode.kind === "api-reference";
+  const isCookbooks = sidebarMode.kind === "cookbooks";
   const activeTree = useMemo(() => {
+    if (isCookbooks) return getCookbooksTree(tree);
     if (isApiReference) return getApiReferenceTree(tree);
     return nestedRoot ? getNestedDocsTree(tree, nestedRoot) : GLOBAL_DOCS_TREE;
-  }, [isApiReference, nestedRoot, tree]);
+  }, [isCookbooks, isApiReference, nestedRoot, tree]);
 
   return (
     <DocsNavigationContext.Provider value={navigationContext}>

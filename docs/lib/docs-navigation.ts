@@ -4,6 +4,7 @@ export type NestedDocsRoot = "openui-lang" | "build-agents" | "gateway" | "relia
 
 export type SidebarMode =
   | { kind: "global" }
+  | { kind: "cookbooks" }
   | { kind: "api-reference" }
   | {
       kind: "nested";
@@ -50,6 +51,7 @@ export const NESTED_DOCS_SECTIONS: Record<NestedDocsRoot, NestedSection> = {
 };
 
 export const API_REFERENCE_URL = "/docs/api-reference";
+export const COOKBOOKS_URL = "/docs/cookbooks";
 
 const promotedGlobalUrls = new Set([
   "/docs",
@@ -128,6 +130,7 @@ export function getNestedRootForPathname(pathname: string): NestedDocsRoot | und
 }
 
 export function getDefaultSidebarMode(pathname: string): SidebarMode {
+  if (isPathWithin(pathname, COOKBOOKS_URL)) return { kind: "cookbooks" };
   if (isPathWithin(pathname, API_REFERENCE_URL)) return { kind: "api-reference" };
 
   if (pathname === "/docs/overview" || promotedGlobalUrls.has(pathname)) {
@@ -171,6 +174,18 @@ export function getApiReferenceTree(tree: PageTree.Root): PageTree.Root {
   return {
     type: "root",
     $id: "docs:api-reference",
+    name: folder.name,
+    children: folder.children,
+  };
+}
+
+export function getCookbooksTree(tree: PageTree.Root): PageTree.Root {
+  const folder = findNestedFolder(tree.children, "cookbooks");
+  if (!folder) throw new Error('Docs folder "cookbooks" was not found in the page tree.');
+
+  return {
+    type: "root",
+    $id: "docs:cookbooks",
     name: folder.name,
     children: folder.children,
   };
